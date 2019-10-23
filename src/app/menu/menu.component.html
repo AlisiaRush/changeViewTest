@@ -1,0 +1,300 @@
+<!--MOBILE MENU-->
+<!--MOBILE MENU-->
+<!--MOBILE MENU-->
+
+<div id="backgroundOverlay" class="fade-in fade-out" *ngIf="!isCollapsed" (click)="toggleMenu()"></div>
+<!--hamburger menu-->
+<nav class="navbar" id="mobile-menu">
+  <span class="open-slide">
+    <a (click)="toggleMobileOpen()">
+        <i class="material-icons">menu</i>
+    </a>
+  </span>
+</nav>
+
+<div id="side-menu-mobile" class="side-nav-mobile accordion">
+  <div class="menu-header">
+    <div class="login-menu">
+        <i class="material-icons">account_circle</i>
+      <span class="user"><strong>Hello</strong> User</span>
+    </div><!--end login-menu-mobile-->
+
+    <div class="cancel-menu">
+      <a class="mobile-header-cancel"><i class="material-icons" (click)="toggleMobileClose()">clear</i></a>
+    </div><!--end cancel-menu-mobile-->
+  </div><!--end menu-header-mobile-->
+<ul>
+  <li>
+    <a>Home</a>
+</li>
+  <li>
+    <a data-toggle="collapse" class="expand-padding" data-target="#orderManagement" aria-expanded="true" aria-controls="collapseOrderManagement">
+      <div class="float-left">Order Management</div>
+      <i class="material-icons menu-arrows">chevron_right</i>
+    </a>
+
+    <ul id="orderManagement" class="collapse hide expanded-menu" aria-labelledby="menuToggleMobile" data-parent="#side-menu-mobile">
+      <li><a [routerLink]="['/order-inquiry']">Order Inquiry</a></li>
+      <li><a>Invoice Inquiry</a></li>
+      <li><a [routerLink]="['/manages-quote']">Manage Quotes</a></li>
+      <li><a>Lien Release</a></li>
+    </ul>
+</li>
+  <li><a>Build & Buy</a></li>
+  <li><a>Self-Servicews Utilities</a></li>
+  <li>
+      <a data-toggle="collapse" class="expand-padding" data-target="#literature" aria-expanded="true" aria-controls="collapseLiterature">
+          <div class="float-left">Literature</div>
+          <i class="material-icons menu-arrows">chevron_right</i>
+        </a>
+        <div class="price-catalog" id="literature" class="collapse hide" aria-labelledby="menuToggleMobile" data-parent="#side-menu-mobile">
+          <span class="menu-category-title"><i class="material-icons">attach_money</i>Price Catalog</span>
+          <ul class="expanded-menu">
+              <li><a>North</a></li>
+              <li><a>American (English)</a></li>
+              <li><a>Quebec (French)</a></li>
+              <li><a>Canadian</a></li>
+              <li><a>Window Pricing</a></li>
+              <li><a>Guide</a></li>
+              <li><a>Profit Maker</a></li>
+              <li><a>Pricing</a></li>
+            </ul>
+
+            <span class="menu-category-title">
+                <i class="material-icons">insert_drive_file</i>
+              Installation Instructions</span>
+          <ul class="expanded-menu">
+              <li><a>StoreFront Entrances & Framing</a></li>
+              <li><a>Windows</a></li>
+              <li><a>Curtain Wall</a></li>
+              <li><a>Windows Wall</a></li>
+              <li><a>Overhead Glazing</a></li>
+            </ul>
+
+            <span class="menu-category-title">
+                <i class="material-icons">assignment</i>
+              Order Forms</span>
+          <ul class="expanded-menu">
+              <li><a>Doors & Windows</a></li>
+          </ul>
+
+          <span class="menu-category-title">
+              <i class="material-icons">build</i>
+            Corrective Repair Information</span>
+          <ul class="expanded-menu">
+              <li><a>Corrective Field</a></li>
+              <li><a>Repair Info</a></li>
+          </ul>
+
+          <span class="menu-category-title"><i class="material-icons">bar_chart</i>Estimating & Takeoff Guides</span>
+          <ul class="expanded-menu">
+              <li><a>Storefront</a></li>
+              <li><a>Curtain Wall</a></li>
+              <li><a>Window Wall</a></li>
+              <li><a>Overhead Glazing</a></li>
+          </ul>
+        </div>
+  </li>
+
+  <li>
+      <a data-toggle="collapse" class="expand-padding" data-target="#videosTraining" aria-expanded="true" aria-controls="collapseVideosTraining">
+          <div class="float-left">Videos & Training</div>
+          <i class="material-icons menu-arrows">chevron_right</i>
+        </a>
+        <div class="" id="videosTraining" class="collapse hide" aria-labelledby="menuToggleMobile" data-parent="#side-menu-mobile">
+         <span class="menu-category-title">
+            <i class="material-icons">ondemand_video</i>
+            Video Library Installation Care</span>
+          <ul class="expanded-menu">
+              <li><a>Cleaning</a></li>
+              <li><a>Algorithm Finishes</a></li>
+              <li><a>Installation Video</a></li>
+              <li><a>Curtain Wall</a></li>
+              <li><a>SEF</a></li>
+              <li><a>VideoHive</a></li>
+              <li><a>3DOcean</a></li>
+          </ul>
+
+          <span class="menu-category-title">
+              <i class="material-icons">timer</i>
+              Training</span>
+            <ul class="expanded-menu">
+                <li><a>Mechanics School</a></li>
+                <li><a>Modules School</a></li>
+                <li><a>PartnerPak</a></li>
+                <li><a>Training</a></li>
+                <li><a>Customer Specific</a></li>
+                <li><a>School</a></li>
+                <li><a>Pre-Installation</a></li>
+                <li><a>System Review</a></li>
+            </ul>
+
+        </div>
+  </li>
+</ul>
+</div><!--end side-menu-->
+
+<!--END MOBILE MENU-->
+<!--END MOBILE MENU-->
+<!--END MOBILE MENU-->
+<!--END MOBILE MENU-->
+<!--END MOBILE MENU-->
+
+
+<!--MENU-->
+<!--MENU-->
+<!--MENU-->
+
+<!--Hamburger menu-->
+<nav class="navbar" id="large-menu">
+  <span class="open-slide">
+    <a (click)="toggleMenu()">
+      <i class="material-icons">menu</i>
+    </a>
+  </span>
+</nav>
+<!--End Hamburger Menu-->
+
+<!--SIDE NAVIGATION MENU/side-menu-->
+<!--<div id="side-menu" class="side-nav accordion" *ngIf="!isCollapsed" click-outside (clickOutside)="onClickOutside($event)">
+-->
+<div id="side-menu" class="side-nav accordion" *ngIf="!isCollapsed">
+
+  <div class="menu-header">
+    <div class="login-menu">
+        <i class="material-icons">account_circle</i>
+      <span class="user"><strong>Hello</strong> User</span>
+    </div><!--end login-menu-->
+
+    <div class="cancel-menu">
+      <a><i class="material-icons" (click)="toggleMenu()">clear</i></a>
+    </div><!--end cancel-menu-->
+  </div><!--end menu-header-->
+
+  <ul>
+    <li>
+      <a [routerLink]="['/home']">Home</a>
+    </li>
+    <li>
+      <a>
+        <div class="menu-item">Order Management</div>
+        <div class="menu-arrows"><i class="material-icons">chevron_right</i></div>
+      </a>
+  <div class="list-item">
+    <ul>
+      <li><a>Lien Release</a></li>
+      <li><a>Invoice Inquiry</a></li>
+      <li><a [routerLink]="['/manage-quote']">Manage Quote</a></li>
+      <li><a [routerLink]="['/angIndex']">Order Inquirymmm</a></li>
+    </ul>
+  </div><!--end list-item-->
+
+  </li>
+    <li><a>Build & Buy</a></li>
+    <li><a>Self-Services Utilities</a></li>
+    <li>
+      <a>
+          <div class="menu-item">Literature</div>
+          <div class="menu-arrows"><i class="material-icons">chevron_right</i></div>
+      </a>
+      <div class="sub-list-item">
+        <div class="row">
+          <div class="col-lg-3 mega-menu">
+            <span class="menu-category-title"><i class="material-icons">attach_money</i>Price Catalog</span>
+
+               <ul>
+                <li><a>North</a></li>
+                <li><a>American (English)</a></li>
+                <li><a>Quebec (French)</a></li>
+                <li><a>Canadian</a></li>
+                <li><a>Window Pricing</a></li>
+                <li><a>Guide</a></li>
+                <li><a>Profit Maker</a></li>
+                <li><a>Pricing</a></li>
+              </ul>
+          </div><!--end mega-menu-->
+          <div class="col-lg-5 mega-menu">
+            <span class="menu-category-title"><i class="material-icons">insert_drive_file</i>Installation Instructions</span>
+
+                 <ul>
+                   <li><a>Storefront Entrance & Framing</a></li>
+                   <li><a>Windows</a></li>
+                   <li><a>Curtain Wall</a></li>
+                   <li><a>Windows Wall</a></li>
+                   <li><a>Overhead Glazing</a></li>
+                 </ul>
+        </div><!--end mega-menu-->
+        <div class="col-lg-4 mega-menu">
+          <span class="menu-category-title"><i class="material-icons">assignment</i>Order Forms</span>
+              <ul>
+                <li><a>Doors & Windows</a></li>
+              </ul>
+        </div><!--end mega-menu-->
+        </div><!--end row-->
+
+        <div class="row mt-3">
+          <div class="col-lg-5 mega-menu">
+            <span class="menu-category-title"><i class="material-icons">build</i>Corrective Repair Information</span>
+                <ul>
+                  <li><a>Corrective Field</a></li>
+                  <li><a>Repair Info</a></li>
+                </ul>
+          </div><!--end mega-menu-->
+
+          <div class="col-lg-5 mega-menu">
+             <span class="menu-category-title"><i class="material-icons">bar_chart</i>Estimating & Takeoff Guides</span>
+
+                <ul>
+                  <li><a>Storefront</a></li>
+                  <li><a>Curtain Wall</a></li>
+                  <li><a>Window Wall</a></li>
+                  <li><a>Overhead Glazing</a></li>
+                </ul>
+          </div><!--end mega-menu-->
+        </div><!--end row-->
+      </div><!--end sub-list-item-->
+    </li>
+
+    <li>
+      <a>
+          <div class="menu-item">Videos & Training</div>
+          <div class="menu-arrows"><i class="material-icons">chevron_right</i></div>
+      </a>
+      <div class="sub-list-item">
+        <div class="row">
+          <div class="col-lg-6 mega-menu">
+              <span class="menu-category-title"><i class="material-icons">insert_drive_file</i>Video Library Installation Care</span>
+
+               <ul>
+                <li><a>Cleaning</a></li>
+                <li><a>Algorithm Finishes</a></li>
+                <li><a>Installation Video</a></li>
+                <li><a>Curtain Wall</a></li>
+                <li><a>SEF</a></li>
+                <li><a>VideoHive</a></li>
+                <li><a>3DOcean</a></li>
+
+              </ul>
+          </div><!--end mega-menu-->
+          <div class="col-lg-4 mega-menu">
+            <span class="menu-category-title"><i class="material-icons">timer</i>Training</span>
+
+                 <ul>
+                   <li><a>Mechanics School</a></li>
+                   <li><a>Modules School</a></li>
+                   <li><a>PartnerPak</a></li>
+                   <li><a>Training</a></li>
+                   <li><a>Customer Specific</a></li>
+                   <li><a>School</a></li>
+                   <li><a>Pre-Installation</a></li>
+                   <li><a>System Review</a></li>
+                 </ul>
+                 </div><!--end row-->
+        </div><!--end mega-menu-->
+      </div><!--end sub-list-item-->
+    </li>
+  </ul>
+  </div>
+  <!--END MENU-->
+  <!--END MENU-->
+  <!--END MENU-->

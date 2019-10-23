@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+
+/**CUSTOM THEME STYLING** (convert to sass later**/
+.primary{background:#0062cc; color:#fff;}
+.secondary{background:#a2ccf8; color:#000;}
+
+/**ANGULAR MATERIAL STYLING**/
+.mat-menu-content{padding:10px;}
+.mat-toolbar{margin-bottom:60px;}
+
+/**STANDARD TABLE STYLING**/
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #a2ccf8;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #a2ccf8;
+}

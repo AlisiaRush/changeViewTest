@@ -1,0 +1,31 @@
+
+    <div class="container">
+       <h1>{{title}} with 2-way Binding</h1>
+
+       <p>
+         The following dropdown menus are populated using the RxJs Observable method using subscribe.
+      </p>
+
+      <hr>
+<div class="row">
+<div class="col-3">
+<h5>Basic Menu</h5>
+<mat-form-field>
+    <mat-label>Employees</mat-label>
+    <!--<mat-select [(ngModel)]="firstname">-->
+        <mat-select>
+      <mat-option *ngFor="let employee of employees" [value]="employee.name">
+        {{employee.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+<p>You have selected: <br />
+  <strong>{{firstname}}</strong></p>
+
+</div><!--end col-->
+
+
+</div><!--end row-->
+</div><!--end container-->
+
+

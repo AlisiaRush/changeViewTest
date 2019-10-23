@@ -1,0 +1,35 @@
+<div class="container">
+    <h1>{{title}} with 2-way Binding</h1>
+
+    <p>
+      The following tables are populated using the RxJs Observable method using subscribe.
+   </p>
+
+   <hr>
+   <div class="col-3">
+      <input type="text" [(ngModel)]="firstname">
+      <div id="error"></div>
+     <p>You have searched for:<br />  <strong>{{firstname}}</strong></p>
+     <button (click)="getResults()">click me!</button>
+     <br />
+    <br />
+    <button class="btn btn-primary" (click)="getResults()">Console log Data</button>
+    <br /><br />
+        <table>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Address</th>
+              <th>Phone</th>
+            </tr>
+            <tr *ngFor="let employee of employees | search: firstname">
+              <td>{{employee.id}}</td>
+              <td>{{employee.name}}</td>
+              <td>{{employee.email}}</td>
+              <td>{{employee.address}}</td>
+              <td>{{employee.phone}}</td>
+            </tr>
+            </table>
+    </div><!--end col-->
+    </div><!--end container-->
