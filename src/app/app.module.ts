@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './material/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatDialogModule, MatDialog } from '@angular/material/dialog';
@@ -19,6 +18,8 @@ import { EmployeeService } from './employee.service';
 import { SearchPipe } from './pipes/search.pipe';
 import { MenuComponent } from './menu/menu.component';
 
+import { MaterialModule } from './library/material/material.module';
+import { PrimengModule } from './library/primeng/primeng.module';
 
 
 @NgModule({
@@ -40,7 +41,9 @@ import { MenuComponent } from './menu/menu.component';
     MatDialogModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MaterialModule,
+    PrimengModule
   ],
   exports: [
 

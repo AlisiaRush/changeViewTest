@@ -1,7 +1,7 @@
 <mat-toolbar class="primary title header"><h1>{{title}}</h1>
+  <app-menu></app-menu>
   <button mat-button class="default" routerLink="" routerLinkActive="active">Home</button>
   <button mat-button class="default"routerLink="angIndex" routerLinkActive="active">Ang Index</button>
-  <button mat-ment-item routerLink="menu" routerLinkActive = "active">Menu</button>
 <button mat-button [matMenuTriggerFor]="menu" class="default">Data Binding</button>
 
 <mat-menu #menu="matMenu">

@@ -1,61 +1,76 @@
-import { Component, OnInit, ElementRef,Renderer2 } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { MenuItem } from 'primeng/api';
+ 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css'] ,
+
+    selector: 'app-menu',
+    templateUrl: './menu.component.html',
+    styleUrls: ['./menu.component.css'],
 
 })
+
+ 
+
 export class MenuComponent implements OnInit {
 
-  //For showing and hiding side-menu and background overlay on medium to large screens
-  isCollapsed: boolean = true;//For showing and hiding side-menu and background overlay
+    constructor() { }
 
-  constructor(private el:ElementRef, private renderer:Renderer2) { }
+    isCollapsed = true;
+    items: MenuItem[];
 
-  ngOnInit() {
-
-    //Large Menu hides on smaller screens
-    function largeMenu(screenWidthLarge) {
-      if (screenWidthLarge.matches) { // If media query matches
-        document.getElementById('large-menu').style.display = "none";
-      } else if  (!screenWidthLarge.matches) {
-        document.getElementById('large-menu').style.display = "block";
-      }
+    toggleLogin() {
+        this.isCollapsed = !this.isCollapsed;
     }
 
-    var screenWidthLarge = window.matchMedia("(max-width: 700px)")
-    largeMenu(screenWidthLarge) // Call listener function at run time
-    screenWidthLarge.addListener(largeMenu) // Attach listener function on state changes
+    ngOnInit() {
+            this.items = [
 
-    //Small Menu hides on larger screens
-    function SmallMenu(x) {
-      if (screenWidthSmall.matches) { // If media query matches
-        document.getElementById('mobile-menu').style.display = "none";
-      } else if  (!screenWidthSmall.matches) {
-        document.getElementById('mobile-menu').style.display = "block";
-      }
-    }
+                {
+                    label: 'HOME', routerLink: 'home'
+                },
 
-    var screenWidthSmall = window.matchMedia("(min-width: 700px)")
-    SmallMenu(screenWidthSmall) // Call listener function at run time
-    screenWidthSmall.addListener(SmallMenu) // Attach listener function on state changes
-  }//end ngOnInit
+                {
+                    label: 'ORDER MANAGEMENT',
+                    icon: 'pi pi-fw pi-plus',
+                    items: [
+                        {label: 'angIndex', routerLink: ['angIndex']},
+                        {label: 'Invoice Inquiry', routerLink: ['invoice-inquiry']},
+                        {label: 'Manage Quote', routerLink: ['manage-quote']},
+                        {label: 'Order Inquiry', routerLink: ['order-inquiry']},
+                    ]
+                },
 
-  //For showing and hiding side-menu and background overlay on medium to large screens
-   toggleMenu(){
-     this.isCollapsed = !this.isCollapsed;
-   }
+                {
+                    label: 'BUILD & BUY',
+                },
 
-    //For showing and hiding side-menu and background overlay on small screens
-    toggleMobileOpen(){
-    document.getElementById('side-menu-mobile').style.width = "100%";
-  }
+                {
+                    label: 'SELF-SERVICES UTILITIES',
 
-  toggleMobileClose(){
-    document.getElementById('side-menu-mobile').style.width = "0";
-  }
+                },
 
+                {
+                    label: 'LITERATURE',
+                    icon: 'pi pi-fw pi-plus',
+                    items: [
+                        {label: 'Price Catalog', routerLink: ['price-catalog']},
+                        {label: 'Intstallation Instructions', routerLink: ['installation-instructions']},
+                        {label: 'Order Forms', routerLink: ['order-forms']},
+                        {label: 'Corrective Repair', routerLink: ['corrective-repair']},
+                        {label: 'Estimatinmg & TakeOff Guides', routerLink: 'estimating-and-take-off-guides'},
+                    ]
+                },
+
+ 
+
+                {
+                    label: 'VIDEOS & TRAINING',
+                    icon: 'pi pi-fw pi-plus',
+                    items: [
+                        {label: 'Video Library Installation Care', routerLink: 'video-library-installation-care'},
+                        {label: 'Training', routerLink: 'training'}
+                    ]
+                }
+            ];
+        }
 }
-
-
